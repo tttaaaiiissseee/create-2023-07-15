@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>入力画面</title>
+</head>
+
+<body>
+	<h1>NoDIパターン</h1>
+	<form action="output.html" th:action="@{output}" th:object="${shainForm}">
+		<p>社員Noを入力してください</p>
+		<input type="text" name="number" th:field="${shainForm.number}">
+		<p style="color:red;" class="error" th:errors="${shainForm.number}">エラー</p>
+		<input type="submit" value="送信">
+	</form>
+</body>
+
+</html>
