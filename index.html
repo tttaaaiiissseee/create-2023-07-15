@@ -8,10 +8,10 @@
 
 <body>
 	<h1>NoDIパターン</h1>
-	<form method="POST" action="output.html" th:action="@{output}" th:object="${shainForm}">
-		<p>社員Noを入れてください(3桁の半角数字)</p>
+	<form action="output.html" th:action="@{action}" th:object="${shainForm}">
+		<p>社員Noを入れてください</p>
 		<input type="text" name="number" th:field="${shainForm.number}">
-		<p style="color:red;" th:errors="${shainForm.number}" class="error">社員Noを入れてください </p>
+		<p style="color:red;" class="number" th:error="${shainForm.number}"></p>
 		<input type="submit" value="送信">
 	</form>
 </body>
